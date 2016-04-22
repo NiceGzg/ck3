@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/reset.css">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1.0" />
+	<style>
+		.tj{
+			width:640px;
+			margin:0 auto;
+			position: relative;
+		}
+		.outer2{
+			width:640px; 
+			height:748px; 
+			position: relative;
+		}
+		.inner2{
+			width:640px; 
+			height:748px; 
+			overflow:hidden;
+		}
+		.con2{
+			width: 4000px; 
+			height: 748px; 
+			overflow: hidden;
+		}
+		.con2 img{
+			width: 640px; 
+			height: 748px; 
+			float: left;
+		}
+		.left2{
+			width: 48px;
+			height: 62px; 
+			background: rgba(0,0,0,.2);
+			position: absolute;
+			left: 0px;
+			top: 335px;
+			z-index: 10;
+			cursor: pointer;
+			color: #fff;
+		    text-align: center;
+		    line-height: 62px;
+		    font-size: 22px;
+		    font-weight: 400;
+		    font-family: simsun;
+		}
+		.right2{
+			width: 48px; 
+			height: 62px; 
+			background: rgba(0,0,0,.2);
+			position: absolute; 
+			right: 0; 
+			top: 335px;
+			z-index: 10;
+			cursor: pointer;
+			color: #fff;
+		    text-align: center;
+		    line-height: 62px;
+		    font-size: 22px;
+		    font-weight: 400;
+		    font-family: simsun;
+		}
+		.yitu{
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.ertu{
+			position: absolute;
+			right: 4px;
+			top: 3px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<body>
+<div class="tj">
+	<div class="outer2">
+		<div class="inner2">
+			<div class="con2">
+				<img src="images/12.png">
+				<img src="images/13.png">
+				<img src="images/14.jpg">
+			</div>
+			<p class="left2"><</p>
+			<p class="right2">></p>
+		</div>
+	</div>
+	<img class="yitu" src="images/15.png" alt="">
+	<img class="ertu" src="images/16.png" alt="">
+</div>
+</body>
+<script>
+function resetPage(){
+	var deviceWidth=document.documentElement.clientWidth;// 设备实际显示宽度
+	var scale=deviceWidth/640;
+	document.body.style.zoom=scale;
+}
+resetPage();
+window.onresize=function (){
+	resetPage();
+}
+var x=1;
+var anm=true;
+var imgW=$('.con2 img').width();
+$('.inner2').scrollLeft(imgW);
+var fir=$('.con2 img:first').clone();
+var las=$('.con2 img:last').clone();
+$('.con2').append(fir);
+$('.con2').prepend(las);
+$('.left2').click(function (){
+	clearInterval(timer1);
+	if (anm) {
+		anm=false;
+		x--;
+		if (x<0) {
+			x=$('.con2 img').length-3;
+			$('.inner2').scrollLeft(imgW*(x+1));
+		};
+		move2();
+	};
+});
+$('.right2').click(function (){
+	clearInterval(timer1);
+	if (anm) {
+		anm=false;
+		moveRight();
+	};
+});
+var timer1=null;
+function automove2(){
+	timer1=setInterval(moveRight,3000)
+}
+function moveRight(){
+	x++;
+	if (x>=$('.con2 img').length) {
+		x=2;
+		$('.inner2').scrollLeft(imgW);
+	};
+	move2();
+}
+function move2(){
+	$('.inner2').stop().animate({scrollLeft:imgW*x},function (){
+		anm=true;
+	});
+}
+var n = 1, startX = 0, startY = 0, endX = 0, endY = 0;
+	document.addEventListener('touchstart',function (ev){
+		startX=ev.touches[0].pageX;
+		startY=ev.touches[0].pageY;
+	}, false);
+    document.addEventListener('touchmove',function (ev){
+    	ev.preventDefault();
+    	endX=ev.touches[0].pageX;
+		endY=ev.touches[0].pageY;
+    }, false);
+    document.addEventListener('touchend',function (ev){
+        if (startX-endX<-25) {//向左滑动
+            clearInterval(timer1);
+			if (anm) {
+				anm=false;
+				x--;
+				if (x<0) {
+					x=$('.con2 img').length-3;
+					$('.inner2').scrollLeft(imgW*(x+1));
+				};
+				move2();
+			};
+        }
+        if (startX-endX>25) {//向右滑动
+            clearInterval(timer1);
+			if (anm) {
+				anm=false;
+				moveRight();
+			};
+        }
+        console.log(n);
+    }, false);
+$('.ertu').click(function(){
+	window.open('sj.html','_self');
+})
+</script>
+</html>

@@ -1,0 +1,202 @@
+.sj{
+	width:640px;
+	margin:0 auto;
+}
+.sj1{
+	position: relative;
+	overflow: hidden;
+}
+.sj11{
+	float: left;
+	width:640px;
+	height: 345px;
+}
+.sj12{
+	position: absolute;
+	left: 64px;
+	top: 218px;
+	cursor: pointer;
+	width:199px;
+	height: 59px;
+}
+.sj2{
+	overflow: hidden;
+}
+.sj21{
+	overflow: hidden;
+}
+.sj21 img{
+	float: left;
+	cursor: pointer;
+	width:640px;
+	height: 45px;
+}
+.sjtj{
+	overflow: hidden;
+}
+.sjtj img{
+	float: left;
+	cursor: pointer;
+	width:640px;
+	height: 226px;
+}
+.sj22{
+	/* overflow: hidden; */
+	/* display: none; */
+}
+.xsyc{
+	display: none;
+	overflow: hidden;
+}
+.sj221{
+	overflow: hidden;
+	float: left;
+}
+.sj221 img{
+	float: left;
+	width: 100px;
+	height: 274px;
+}
+.sj222{
+	float: left;
+	position: relative;
+}
+p{
+	font-size: 22px;
+	margin-top: 15px;
+	line-height: 39px;
+	margin-left: 12px;
+}
+.sj2221{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width:32px;
+	height: 33px;
+}
+.sj2222{
+	position: absolute;
+	right: 20px;
+	top: 33px;
+	width:21px;
+	height: 24px;
+}
+.sj2223{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 94px;
+	height: 53px;
+}
+.sj322{
+	float: left;
+	position: relative;
+	width:540px;
+}
+.sj3224{
+	overflow: hidden;
+}
+.sj321{
+	overflow: hidden;
+	float: left;
+}
+.sj321 img{
+	float: left;
+	width: 100px;
+	height: 1119px;
+}
+.sj322 span{
+	font-size: 22px;
+	color: #c90329;
+	margin-left: 12px;
+	margin-top: 15px;
+	float: left;
+}
+.sj3221{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width:32px;
+	height: 33px;
+}
+.sj3222{
+	position: absolute;
+	right: 20px;
+	top: 33px;
+	width:21px;
+	height: 24px;
+}
+.sj3223{
+	font-size: 22px;
+	margin-top: 0;
+	line-height: 39px;
+	margin-left: 12px;
+}
+.outer2{
+	width:640px; 
+	height:361px; 
+	position: relative;
+}
+.inner2{
+	width:640px; 
+	height:361px; 
+	overflow:hidden;
+}
+.con2{
+	width: 4000px; 
+	height: 361px; 
+	overflow: hidden;
+}
+.con2 img{
+	width: 640px; 
+	height: 361px; 
+	float: left;
+}
+.left2{
+	width: 48px;
+	height: 62px; 
+	background: rgba(0,0,0,.2);
+	position: absolute;
+	left: 0px;
+	top: 128px;
+	z-index: 10;
+	cursor: pointer;
+	color: #fff;
+    text-align: center;
+    line-height: 62px;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: simsun;
+}
+.right2{
+	width: 48px; 
+	height: 62px; 
+	background: rgba(0,0,0,.2);
+	position: absolute; 
+	right: 0; 
+	top: 128px;
+	z-index: 10;
+	cursor: pointer;
+	color: #fff;
+    text-align: center;
+    line-height: 62px;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: simsun;
+}
+#tupian{
+	position: relative;
+}
+.tupian1{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.dibu{
+	overflow: hidden;
+}
+.dibu img{
+	width:640px;
+	height: 75px;
+	float: left;
+}
